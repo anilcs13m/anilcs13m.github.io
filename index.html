@@ -1,189 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anil Kumar - Machine Learning Engineer</title>
-    <style>
-        :root {
-            --primary: #2962ff;
-            --dark: #0a192f;
-            --light: #ccd6f6;
-            --accent: #64ffda;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--light);
-            background-color: var(--dark);
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        h1 {
-            color: var(--accent);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 1px solid var(--primary);
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-        h3 {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--light);
-            opacity: 0.9;
-        }
-        .project-category {
-            margin-bottom: 2rem;
-        }
-        .project {
-            background: rgba(10, 25, 47, 0.5);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--primary);
-        }
-        .project-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-        .project-details {
-            margin-left: 1.5rem;
-        }
-        .project-details li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-        .project-details li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        .tech {
-            display: inline-block;
-            background: rgba(41, 98, 255, 0.2);
-            color: var(--accent);
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin: 0.2rem;
-        }
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anil Kumar – Machine Learning Engineer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>👋 Hi, I'm Anil Kumar</h1>
-        <p class="subtitle">Machine Learning Engineer | Specializing in Video Intelligence & Multimodal AI</p>
-        <p>Building production-grade systems that bridge computer vision and language understanding for e-commerce and content platforms.</p>
-    </header>
 
-    <section>
-        <h2>🎯 Featured Projects</h2>
+  <header class="section">
+    <h1>👋 Hi there, I'm Anil Kumar</h1>
+    <p><strong>Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</strong></p>
+    <p>Building production-grade systems that bridge computer vision and language understanding for e-commerce and content platforms.</p>
+  </header>
 
-        <div class="project-category">
-            <h3>🛒 E-Commerce & Fashion AI</h3>
-            
-            <div class="project">
-                <div class="project-title">🎥 Video Injection System</div>
-                <ul class="project-details">
-                    <li>Made videos shoppable by detecting/linking fashion products </li>
-                    <li>Tech: <span class="tech">YOLO-NAS</span> <span class="tech">OpenCV</span> <span class="tech">GraphQL</span></li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">🧥 Clothing Part Detection</div>
-                <ul class="project-details">
-                    <li>Real-time identification of garment components in video frames</li>
-                    <li>Tech: <span class="tech">Mask R-CNN</span> <span class="tech">Fine-tuning</span></li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">🧠 Visual Similarity Search</div>
-                <ul class="project-details">
-                    <li>CLIP-based product discovery engine (28% better accuracy than legacy systems)</li>
-                    <li>Tech: <span class="tech">CLIP</span> <span class="tech">FAISS</span> <span class="tech">Metric Learning</span></li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">👗 AI Stylist (LLaMA Fine-Tuning)</div>
-                <ul class="project-details">
-                    <li>Personalized outfit recommendations using fashion-focused LLM</li>
-                    <li>Tech: <span class="tech">LLaMA</span> <span class="tech">LoRA</span> <span class="tech">PyTorch FSDP</span></li>
-                </ul>
-            </div>
-        </div>
+  <section class="section">
+    <h2>🔥 Projects & Solutions</h2>
 
-        <div class="project-category">
-            <h3>🎥 Video Intelligence Systems</h3>
-            
-            <div class="project">
-                <div class="project-title">⚠️ Content Moderation Pipeline</div>
-                <ul class="project-details">
-                    <li>Detected policy-violating content across </li>
-                    <li>Tech: <span class="tech">EfficientNet-V2</span> <span class="tech">ByteTrack</span> <span class="tech">Redis</span></li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">🖼️ AI Thumbnail Generator</div>
-                <ul class="project-details">
-                    <li>Attention-based frame selection </li>
-                    <li>Tech: <span class="tech">ResNet-50</span> <span class="tech">FFmpeg</span></li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">🧠 Video Classification</div>
-                <ul class="project-details">
-                    <li>Transformer-based content categorization</li>
-                </ul>
-            </div>
-        </div>
+    <h3>🛒 E-Commerce AI Systems</h3>
+    <ul>
+      <li>🎬 <strong>Shoppable Video Injection</strong> – Auto-tag products in videos for seamless in-video shopping.</li>
+      <li>👗 <strong>Visual Similarity Search</strong> – Retrieve visually similar fashion items using image embeddings.</li>
+      <li>🧥 <strong>Clothing Part Detection</strong> – Detect and localize key parts of garments using object detection.</li>
+      <li>🤖 <strong>Fashion Recommender</strong> – Suggest outfits based on partial inputs using fine-tuned LLaMA models.</li>
+      <li>👗 <strong>AI Stylist (LLaMA Fine-Tuning)</strong> – Generate personalized style suggestions using multimodal prompts.</li>
+    </ul>
 
-        <div class="project-category">
-            <h3>👤 Biometrics & NLP</h3>
-            
-            <div class="project">
-                <div class="project-title">🧑‍🦰 Face Recognition System</div>
-                <ul class="project-details">
-                    <li>Large-scale identity matching across video datasets</li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">💬 Sentiment Analysis</div>
-                <ul class="project-details">
-                    <li>Real-time text classification for user-generated content</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <h3>🎥 Video Intelligence</h3>
+    <ul>
+      <li>🛡️ <strong>Content Moderation</strong> – Detect inappropriate or unsafe visual content in real-time using computer vision.</li>
+      <li>🎥 <strong>Video Injection System</strong> – Add dynamic overlays or triggers based on object recognition in video streams.</li>
+      <li>🖼️ <strong>AI Thumbnail Generator</strong> – Generate attractive thumbnails by analyzing video keyframes and content context.</li>
+      <li>🏷️ <strong>Video Classification</strong> – Classify videos using combined audio and visual embeddings with transformer-based models.</li>
+      <li>⚠️ <strong>Content Moderation Pipeline</strong> – Async system for processing videos with object detection, OCR, and tagging.</li>
+      <li>🧑‍🦰 <strong>Face Recognition System</strong> – Cluster and track faces across video frames for behavior analysis and security.</li>
+    </ul>
+
+    <h3>📸 Computer Vision Models</h3>
+    <ul>
+      <li>🔍 <strong>Object Detection & Classification</strong> – Trained models on retail images to detect products and classify categories.</li>
+      <li>🖼️ <strong>Image Captioning</strong> – Generated descriptions from images using encoder-decoder architectures.</li>
+      <li>🔎 <strong>CLIP-based Feature Extraction</strong> – Used for multimodal search and retrieval based on image-text embeddings.</li>
+      <li>🧠 <strong>Vision Transformer with MAE</strong> – Self-supervised learning for image understanding with masked autoencoding.</li>
+      <li>🧬 <strong>Self-Supervised Learning Frameworks</strong> – Pretrained vision models with contrastive and masked learning methods.</li>
+      <li>👕 <strong>Fashion Image Classification</strong> – Built scalable classifiers for category, gender, sleeve-length and style.</li>
+    </ul>
+
+    <h3>🔉 Audio & Multimodal Intelligence</h3>
+    <ul>
+      <li>🎧 <strong>Audio Classification</strong> – Categorized audio scenes (e.g., crowd noise, music) using VGGish features.</li>
+      <li>🗣️ <strong>Text Feature Extraction</strong> – Extracted semantic embeddings using BERT, LLaMA, and other LLMs.</li>
+      <li>📝 <strong>Sentiment Analysis</strong> – Identified sentiment in customer feedback using fine-tuned transformer models.</li>
+    </ul>
+
+    <h3>🎞️ Video Retrieval & Understanding</h3>
+    <ul>
+      <li>🎬 <strong>Video Similarity Detection</strong> – Compared and ranked videos using I3D + CLIP + audio embeddings.</li>
+      <li>📽️ <strong>Video Retrieval System</strong> – Built a multimodal search system for enterprise video libraries.</li>
+    </ul>
+
+    <h3>🧠 Other Projects</h3>
+    <ul>
+      <li>🔢 <strong>Digit Classification</strong> – Built simple classifiers on MNIST for experimentation and benchmarking.</li>
+      <li>🏷️ <strong>Logo Detection</strong> – Detected brand logos in product and promotional images using object detectors.</li>
+    </ul>
+  </section>
+
+  <footer class="section">
+    <p><strong>Education:</strong> B.Tech and M.Tech in Computer Science</p>
+    <p><strong>Experience:</strong> 8+ Years in Machine Learning and AI (most time spent on data curation, model training, and deployment)</p>
+    <p><strong>Focus Areas:</strong> Computer Vision, LLMs, Multimodal AI, Video Understanding, and Scalable ML Systems</p>
+  </footer>
+
 </body>
 </html>
+
