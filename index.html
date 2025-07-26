@@ -1,156 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anil Kumar | ML Engineer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f7fa;
-      color: #333;
-    }
-
-    header {
-      background-color: #002b5b;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #002b5b;
-      font-size: 28px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 8px;
-    }
-
-    .project-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      flex: 1 1 calc(50% - 20px);
-      min-width: 280px;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    footer {
-      background-color: #002b5b;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
-    }
-
-    .badge {
-      display: inline-block;
-      background-color: #0077cc;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin: 4px;
-    }
-
-    @media (max-width: 600px) {
-      .project-card {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anil Kumar - Machine Learning Engineer</title>
+    <style>
+        :root {
+            --primary: #2962ff;
+            --dark: #0a192f;
+            --light: #ccd6f6;
+            --accent: #64ffda;
+            --table-bg: rgba(10, 25, 47, 0.7);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--dark);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+        }
+        h3 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        .about-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .about-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .domain-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 1.5rem 0;
+        }
+        .domain-item {
+            background: rgba(41, 98, 255, 0.1);
+            padding: 0.8rem 1.2rem;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent);
+            flex: 1 1 300px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--table-bg);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        th {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: rgba(41, 98, 255, 0.1);
+        }
+        .project-icon {
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+        .tech {
+            display: inline-block;
+            background: rgba(41, 98, 255, 0.2);
+            color: var(--accent);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 0.2rem;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>👋 Hi there, I'm Anil Kumar</h1>
+        <p class="subtitle">Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</p>
+        <p>Building scalable ML systems that bridge <strong>computer vision and language understanding</strong> for e-commerce, retail, and content platforms.</p>
+    </header>
 
-  <header>
-    <h1>Anil Kumar</h1>
-    <p>Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</p>
-    <p>Building production-grade systems that bridge computer vision and language understanding for e-commerce and content platforms.</p>
-  </header>
+    <section>
+        <h2>🧠 About Me</h2>
+        
+        <div class="about-item">
+            <span class="about-icon">🎓</span>
+            <span><strong>B.Tech + M.Tech in Computer Science</strong></span>
+        </div>
+        
+        <div class="about-item">
+            <span class="about-icon">💼</span>
+            <span><strong>8+ years of experience</strong> in Machine Learning & Deep Learning</span>
+        </div>
+        
+        <div class="about-item">
+            <span class="about-icon">🏗️</span>
+            <span>Experienced in <strong>end-to-end ML project execution</strong>: from problem discovery, data curation, model development, to scalable deployment.</span>
+        </div>
+    </section>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I hold a B.Tech and M.Tech in Computer Science and have over 8 years of experience working on machine learning projects spanning computer vision, NLP, and multimodal systems. I specialize in transforming research ideas into production-grade AI services, with a strong focus on data curation, model development, and deployment.</p>
-    <p>70–80% of my time is dedicated to understanding, curating, and structuring datasets to power robust AI solutions.</p>
-  </section>
+    <section>
+        <h2>🔥 Key Domains</h2>
+        
+        <div class="domain-list">
+            <div class="domain-item">🧠 Classification, Detection, Recognition</div>
+            <div class="domain-item">🖼️ Vision-Language Multimodal Models (e.g., CLIP, LLaMA)</div>
+            <div class="domain-item">🎥 Video AI and Audio-Visual Understanding</div>
+            <div class="domain-item">🧑‍🤝‍🧑 Face Recognition & Clustering</div>
+            <div class="domain-item">🧵 Self-Supervised Learning & Transformers (MAE, ViT)</div>
+        </div>
+    </section>
 
-  <section>
-    <h2>🔍 E-Commerce AI Projects</h2>
-    <div class="project-grid">
-      <div class="project-card"><strong>Shoppable Video Injection</strong><br/>Overlaying product links in videos using detection and tracking.</div>
-      <div class="project-card"><strong>Visual Similarity Search</strong><br/>Finding visually similar fashion items using CLIP and embeddings.</div>
-      <div class="project-card"><strong>Clothing Part Detection</strong><br/>Identifying and labeling parts of clothing using object detection models.</div>
-      <div class="project-card"><strong>Fashion Recommender</strong><br/>Suggesting fashion outfits based on partial input using LLaMA.</div>
-      <div class="project-card"><strong>AI Stylist</strong><br/>Personalized style recommendations using fine-tuned vision-language models.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>🎥 Video Intelligence Projects</h2>
-    <div class="project-grid">
-      <div class="project-card"><strong>Content Moderation Pipeline</strong><br/>Detecting NSFW or unsafe video content using CV + audio features.</div>
-      <div class="project-card"><strong>Video Injection System</strong><br/>Placing interactive elements into videos based on product matches.</div>
-      <div class="project-card"><strong>AI Thumbnail Generator</strong><br/>Selecting the most representative and engaging thumbnails automatically.</div>
-      <div class="project-card"><strong>Video Classification</strong><br/>Classifying videos using I3D and audio features from VGGish.</div>
-      <div class="project-card"><strong>Video Similarity & Retrieval</strong><br/>Retrieving related videos based on visual/audio/text similarity.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>🧠 Vision & Multimodal Projects</h2>
-    <div class="project-grid">
-      <div class="project-card"><strong>Face Recognition System</strong><br/>Grouping or identifying people across videos using embeddings and clustering.</div>
-      <div class="project-card"><strong>Logo Detection</strong><br/>Detecting brand logos in frames for copyright and marketing use-cases.</div>
-      <div class="project-card"><strong>Digit Classification</strong><br/>Classifying handwritten digits using CNNs.</div>
-      <div class="project-card"><strong>Image Captioning</strong><br/>Generating captions for fashion items using CNN + LSTM or Transformers.</div>
-      <div class="project-card"><strong>Self-Supervised Learning (MAE)</strong><br/>Pretraining vision transformers using masked autoencoders.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>📊 NLP & Audio Projects</h2>
-    <div class="project-grid">
-      <div class="project-card"><strong>Text Feature Extraction</strong><br/>Using transformers for text embeddings and semantic analysis.</div>
-      <div class="project-card"><strong>Sentiment Analysis</strong><br/>Analyzing emotions in customer reviews or social media text.</div>
-      <div class="project-card"><strong>Audio Feature Extraction</strong><br/>Using VGGish and MFCCs to extract audio features.</div>
-      <div class="project-card"><strong>Audio Classification</strong><br/>Classifying audio events in content for moderation or tagging.</div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Built with ❤️ by Anil Kumar | © 2025</p>
-  </footer>
-
+    <section>
+        <h2>🚀 Projects & Solutions</h2>
+        
+        <h3>🛍️ E-Commerce & Fashion AI</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="project-icon">👗</span> <strong>AI Stylist (LLaMA Fine-Tuning)</strong></td>
+                    <td>Outfit generation and completion using fine-tuned LLaMA on fashion datasets.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧥</span> <strong>Clothing Part Detection</strong></td>
+                    <td>Detects clothing parts like sleeves, collars, and hems using object detection.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🎬</span> <strong>Shoppable Video Injection</strong></td>
+                    <td>Detects fashion items in videos and links them to e-commerce catalogs.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">👗</span> <strong>Visual Similarity Search</strong></td>
+                    <td>Uses CLIP-based embeddings to find visually similar items.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧠</span> <strong>Fashion Recommender</strong></td>
+                    <td>Recommends complementary clothing items using co-occurrence and visual signals.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🔎</span> <strong>Image Captioning for Fashion</strong></td>
+                    <td>Generates detailed product captions using image-text pairs.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🛍️</span> <strong>Fashion Image Classification</strong></td>
+                    <td>Categorizes fashion products into types, styles, and materials.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>🎥 Video Intelligence & Content Understanding</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="project-icon">🛡️</span> <strong>Content Moderation</strong></td>
+                    <td>Detects unsafe visual/audio content in real-time videos.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🖼️</span> <strong>AI Thumbnail Generator</strong></td>
+                    <td>Generates high-engagement thumbnails from video frames using saliency + aesthetics.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🎥</span> <strong>Video Classification</strong></td>
+                    <td>Classifies videos based on topic, activity, or content type using I3D & Transformers.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧑‍🦰</span> <strong>Face Recognition System</strong></td>
+                    <td>Identifies and clusters faces across frames and videos with tracking and ArcFace embeddings.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧠</span> <strong>Video Retrieval & Similarity Search</strong></td>
+                    <td>Retrieves similar videos using multimodal embeddings (visual + audio + text).</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🎞️</span> <strong>Scene & Logo Detection</strong></td>
+                    <td>Detects brand logos and segments scenes for campaign analysis.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🔍</span> <strong>Video Feature Extraction System</strong></td>
+                    <td>Extracts temporal visual features using I3D, audio features via VGGish, and fuses them.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🛑</span> <strong>Content Moderation Pipeline</strong></td>
+                    <td>Full-stack system for video flagging using detection, OCR, audio, and vision.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">👥</span> <strong>Self-Supervised Face Clustering</strong></td>
+                    <td>Clusters faces in video using contrastive learning + clustering with FAISS + DeepFace.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>🔊 Audio & Text Understanding</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="project-icon">🗣️</span> <strong>Audio Classification</strong></td>
+                    <td>Classifies audio streams using VGGish and temporal modeling.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧏</span> <strong>Text Feature Extraction</strong></td>
+                    <td>Extracts rich contextual embeddings using transformers (BERT/GPT).</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">😊</span> <strong>Sentiment Analysis</strong></td>
+                    <td>Detects user sentiment from product reviews and voice interactions.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>⚙️ Core ML & R&D Work</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="project-icon">🔢</span> <strong>Digit Classification</strong></td>
+                    <td>Classic CNN pipeline for MNIST-style digit recognition.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧪</span> <strong>Model Comparison & Metrics</strong></td>
+                    <td>Benchmarked models using F1, ROC-AUC, precision/recall across tasks.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧼</span> <strong>Data Cleaning & Curation Tools</strong></td>
+                    <td>Built semi-automated data annotation and deduplication pipelines.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🧵</span> <strong>Vision Transformer with MAE</strong></td>
+                    <td>Used masked autoencoders for unsupervised pretraining on large vision datasets.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🤖</span> <strong>Object Detection & Classification</strong></td>
+                    <td>Trained YOLO and Faster-RCNN models for retail and surveillance.</td>
+                </tr>
+                <tr>
+                    <td><span class="project-icon">🖼️</span> <strong>CLIP-based Feature Embeddings</strong></td>
+                    <td>Used CLIP to unify vision and text space for similarity and search.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </body>
 </html>
-
