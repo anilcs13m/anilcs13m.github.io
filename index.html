@@ -1,95 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anil Kumar – Machine Learning Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anil Kumar | ML Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fa;
       color: #333;
     }
-    h1, h2 {
-      color: #2c3e50;
+
+    header {
+      background-color: #002b5b;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
     }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
     }
-    li {
-      margin-bottom: 10px;
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
     }
-    .section {
-      margin-bottom: 40px;
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #002b5b;
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 8px;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      flex: 1 1 calc(50% - 20px);
+      min-width: 280px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: #002b5b;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #0077cc;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .project-card {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header class="section">
-    <h1>👋 Hi there, I'm Anil Kumar</h1>
-    <p><strong>Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</strong></p>
+  <header>
+    <h1>Anil Kumar</h1>
+    <p>Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</p>
     <p>Building production-grade systems that bridge computer vision and language understanding for e-commerce and content platforms.</p>
   </header>
 
-  <section class="section">
-    <h2>🔥 Projects & Solutions</h2>
-
-    <h3>🛒 E-Commerce AI Systems</h3>
-    <ul>
-      <li>🎬 <strong>Shoppable Video Injection</strong> – Auto-tag products in videos for seamless in-video shopping.</li>
-      <li>👗 <strong>Visual Similarity Search</strong> – Retrieve visually similar fashion items using image embeddings.</li>
-      <li>🧥 <strong>Clothing Part Detection</strong> – Detect and localize key parts of garments using object detection.</li>
-      <li>🤖 <strong>Fashion Recommender</strong> – Suggest outfits based on partial inputs using fine-tuned LLaMA models.</li>
-      <li>👗 <strong>AI Stylist (LLaMA Fine-Tuning)</strong> – Generate personalized style suggestions using multimodal prompts.</li>
-    </ul>
-
-    <h3>🎥 Video Intelligence</h3>
-    <ul>
-      <li>🛡️ <strong>Content Moderation</strong> – Detect inappropriate or unsafe visual content in real-time using computer vision.</li>
-      <li>🎥 <strong>Video Injection System</strong> – Add dynamic overlays or triggers based on object recognition in video streams.</li>
-      <li>🖼️ <strong>AI Thumbnail Generator</strong> – Generate attractive thumbnails by analyzing video keyframes and content context.</li>
-      <li>🏷️ <strong>Video Classification</strong> – Classify videos using combined audio and visual embeddings with transformer-based models.</li>
-      <li>⚠️ <strong>Content Moderation Pipeline</strong> – Async system for processing videos with object detection, OCR, and tagging.</li>
-      <li>🧑‍🦰 <strong>Face Recognition System</strong> – Cluster and track faces across video frames for behavior analysis and security.</li>
-    </ul>
-
-    <h3>📸 Computer Vision Models</h3>
-    <ul>
-      <li>🔍 <strong>Object Detection & Classification</strong> – Trained models on retail images to detect products and classify categories.</li>
-      <li>🖼️ <strong>Image Captioning</strong> – Generated descriptions from images using encoder-decoder architectures.</li>
-      <li>🔎 <strong>CLIP-based Feature Extraction</strong> – Used for multimodal search and retrieval based on image-text embeddings.</li>
-      <li>🧠 <strong>Vision Transformer with MAE</strong> – Self-supervised learning for image understanding with masked autoencoding.</li>
-      <li>🧬 <strong>Self-Supervised Learning Frameworks</strong> – Pretrained vision models with contrastive and masked learning methods.</li>
-      <li>👕 <strong>Fashion Image Classification</strong> – Built scalable classifiers for category, gender, sleeve-length and style.</li>
-    </ul>
-
-    <h3>🔉 Audio & Multimodal Intelligence</h3>
-    <ul>
-      <li>🎧 <strong>Audio Classification</strong> – Categorized audio scenes (e.g., crowd noise, music) using VGGish features.</li>
-      <li>🗣️ <strong>Text Feature Extraction</strong> – Extracted semantic embeddings using BERT, LLaMA, and other LLMs.</li>
-      <li>📝 <strong>Sentiment Analysis</strong> – Identified sentiment in customer feedback using fine-tuned transformer models.</li>
-    </ul>
-
-    <h3>🎞️ Video Retrieval & Understanding</h3>
-    <ul>
-      <li>🎬 <strong>Video Similarity Detection</strong> – Compared and ranked videos using I3D + CLIP + audio embeddings.</li>
-      <li>📽️ <strong>Video Retrieval System</strong> – Built a multimodal search system for enterprise video libraries.</li>
-    </ul>
-
-    <h3>🧠 Other Projects</h3>
-    <ul>
-      <li>🔢 <strong>Digit Classification</strong> – Built simple classifiers on MNIST for experimentation and benchmarking.</li>
-      <li>🏷️ <strong>Logo Detection</strong> – Detected brand logos in product and promotional images using object detectors.</li>
-    </ul>
+  <section>
+    <h2>About Me</h2>
+    <p>I hold a B.Tech and M.Tech in Computer Science and have over 8 years of experience working on machine learning projects spanning computer vision, NLP, and multimodal systems. I specialize in transforming research ideas into production-grade AI services, with a strong focus on data curation, model development, and deployment.</p>
+    <p>70–80% of my time is dedicated to understanding, curating, and structuring datasets to power robust AI solutions.</p>
   </section>
 
-  <footer class="section">
-    <p><strong>Education:</strong> B.Tech and M.Tech in Computer Science</p>
-    <p><strong>Experience:</strong> 8+ Years in Machine Learning and AI (most time spent on data curation, model training, and deployment)</p>
-    <p><strong>Focus Areas:</strong> Computer Vision, LLMs, Multimodal AI, Video Understanding, and Scalable ML Systems</p>
+  <section>
+    <h2>🔍 E-Commerce AI Projects</h2>
+    <div class="project-grid">
+      <div class="project-card"><strong>Shoppable Video Injection</strong><br/>Overlaying product links in videos using detection and tracking.</div>
+      <div class="project-card"><strong>Visual Similarity Search</strong><br/>Finding visually similar fashion items using CLIP and embeddings.</div>
+      <div class="project-card"><strong>Clothing Part Detection</strong><br/>Identifying and labeling parts of clothing using object detection models.</div>
+      <div class="project-card"><strong>Fashion Recommender</strong><br/>Suggesting fashion outfits based on partial input using LLaMA.</div>
+      <div class="project-card"><strong>AI Stylist</strong><br/>Personalized style recommendations using fine-tuned vision-language models.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎥 Video Intelligence Projects</h2>
+    <div class="project-grid">
+      <div class="project-card"><strong>Content Moderation Pipeline</strong><br/>Detecting NSFW or unsafe video content using CV + audio features.</div>
+      <div class="project-card"><strong>Video Injection System</strong><br/>Placing interactive elements into videos based on product matches.</div>
+      <div class="project-card"><strong>AI Thumbnail Generator</strong><br/>Selecting the most representative and engaging thumbnails automatically.</div>
+      <div class="project-card"><strong>Video Classification</strong><br/>Classifying videos using I3D and audio features from VGGish.</div>
+      <div class="project-card"><strong>Video Similarity & Retrieval</strong><br/>Retrieving related videos based on visual/audio/text similarity.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 Vision & Multimodal Projects</h2>
+    <div class="project-grid">
+      <div class="project-card"><strong>Face Recognition System</strong><br/>Grouping or identifying people across videos using embeddings and clustering.</div>
+      <div class="project-card"><strong>Logo Detection</strong><br/>Detecting brand logos in frames for copyright and marketing use-cases.</div>
+      <div class="project-card"><strong>Digit Classification</strong><br/>Classifying handwritten digits using CNNs.</div>
+      <div class="project-card"><strong>Image Captioning</strong><br/>Generating captions for fashion items using CNN + LSTM or Transformers.</div>
+      <div class="project-card"><strong>Self-Supervised Learning (MAE)</strong><br/>Pretraining vision transformers using masked autoencoders.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>📊 NLP & Audio Projects</h2>
+    <div class="project-grid">
+      <div class="project-card"><strong>Text Feature Extraction</strong><br/>Using transformers for text embeddings and semantic analysis.</div>
+      <div class="project-card"><strong>Sentiment Analysis</strong><br/>Analyzing emotions in customer reviews or social media text.</div>
+      <div class="project-card"><strong>Audio Feature Extraction</strong><br/>Using VGGish and MFCCs to extract audio features.</div>
+      <div class="project-card"><strong>Audio Classification</strong><br/>Classifying audio events in content for moderation or tagging.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with ❤️ by Anil Kumar | © 2025</p>
   </footer>
 
 </body>
