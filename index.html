@@ -1,10 +1,189 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anil Kumar - Machine Learning Engineer</title>
+    <style>
+        :root {
+            --primary: #2962ff;
+            --dark: #0a192f;
+            --light: #ccd6f6;
+            --accent: #64ffda;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--dark);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            opacity: 0.9;
+        }
+        .project-category {
+            margin-bottom: 2rem;
+        }
+        .project {
+            background: rgba(10, 25, 47, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary);
+        }
+        .project-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        .project-details {
+            margin-left: 1.5rem;
+        }
+        .project-details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .project-details li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .tech {
+            display: inline-block;
+            background: rgba(41, 98, 255, 0.2);
+            color: var(--accent);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 0.2rem;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
 <body>
+    <header>
+        <h1>👋 Hi, I'm Anil Kumar</h1>
+        <p class="subtitle">Machine Learning Engineer | Specializing in Video Intelligence & Multimodal AI</p>
+        <p>Building production-grade systems that bridge computer vision and language understanding for e-commerce and content platforms.</p>
+    </header>
 
-Hello word 
+    <section>
+        <h2>🎯 Featured Projects</h2>
 
+        <div class="project-category">
+            <h3>🛒 E-Commerce & Fashion AI</h3>
+            
+            <div class="project">
+                <div class="project-title">🎥 Video Injection System</div>
+                <ul class="project-details">
+                    <li>Made videos shoppable by detecting/linking fashion products </li>
+                    <li>Tech: <span class="tech">YOLO-NAS</span> <span class="tech">OpenCV</span> <span class="tech">GraphQL</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">🧥 Clothing Part Detection</div>
+                <ul class="project-details">
+                    <li>Real-time identification of garment components in video frames</li>
+                    <li>Tech: <span class="tech">Mask R-CNN</span> <span class="tech">Fine-tuning</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">🧠 Visual Similarity Search</div>
+                <ul class="project-details">
+                    <li>CLIP-based product discovery engine (28% better accuracy than legacy systems)</li>
+                    <li>Tech: <span class="tech">CLIP</span> <span class="tech">FAISS</span> <span class="tech">Metric Learning</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">👗 AI Stylist (LLaMA Fine-Tuning)</div>
+                <ul class="project-details">
+                    <li>Personalized outfit recommendations using fashion-focused LLM</li>
+                    <li>Tech: <span class="tech">LLaMA</span> <span class="tech">LoRA</span> <span class="tech">PyTorch FSDP</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-category">
+            <h3>🎥 Video Intelligence Systems</h3>
+            
+            <div class="project">
+                <div class="project-title">⚠️ Content Moderation Pipeline</div>
+                <ul class="project-details">
+                    <li>Detected policy-violating content across </li>
+                    <li>Tech: <span class="tech">EfficientNet-V2</span> <span class="tech">ByteTrack</span> <span class="tech">Redis</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">🖼️ AI Thumbnail Generator</div>
+                <ul class="project-details">
+                    <li>Attention-based frame selection </li>
+                    <li>Tech: <span class="tech">ResNet-50</span> <span class="tech">FFmpeg</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">🧠 Video Classification</div>
+                <ul class="project-details">
+                    <li>Transformer-based content categorization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-category">
+            <h3>👤 Biometrics & NLP</h3>
+            
+            <div class="project">
+                <div class="project-title">🧑‍🦰 Face Recognition System</div>
+                <ul class="project-details">
+                    <li>Large-scale identity matching across video datasets</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">💬 Sentiment Analysis</div>
+                <ul class="project-details">
+                    <li>Real-time text classification for user-generated content</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
-
 </html>
