@@ -56,6 +56,28 @@
             margin-right: 10px;
             font-size: 1.2rem;
         }
+	.resume-link {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+        .resume-link:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+        }
+	.resume-link svg {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
         .domain-list {
             display: flex;
             flex-wrap: wrap;
@@ -138,6 +160,21 @@
             <span class="about-icon">🏗️</span>
             <span>Experienced in <strong>end-to-end ML project execution</strong>: from problem discovery, data curation, model development, to scalable deployment.</span>
         </div>
+
+	<div class="about-item">
+            <span class="about-icon">📄</span>
+            <div>
+                <span>Download my full resume:</span>
+                <br>
+                <a href="path/to/your/resume.pdf" class="resume-link" download="Anil_Kumar_Resume.pdf">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Resume (PDF)
+                </a>
+            </div>
+        </div>
+
     </section>
 
     <section>
