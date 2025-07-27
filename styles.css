@@ -54,3 +54,13 @@
     font-size: 1.5rem;
     text-decoration: none;
 }
+.project-link {
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.project-link:hover {
+    text-decoration: underline;
+}
