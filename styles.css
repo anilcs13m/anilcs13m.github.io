@@ -1,66 +1,768 @@
-/* styles.css */
 :root {
     --primary: #2962ff;
     --dark: #0a192f;
     --light: #ccd6f6;
     --accent: #64ffda;
+    --table-bg: rgba(10, 25, 47, 0.7);
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.project-card {
-    background: rgba(10, 25, 47, 0.7);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
     color: var(--light);
+    background-color: var(--dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container with side strips */
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+.strip {
+    width: 2px;
+    background-color: white;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.strip:hover {
+    background: linear-gradient(180deg, var(--accent), white, var(--accent));
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 2rem;
+    color: var(--light);
+}
+
+/* Interactive Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+header:hover::before {
+    left: 100%;
+}
+
+header:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(41, 98, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Interactive Sections */
+section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(41, 98, 255, 0.05), transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+section:hover::before {
+    left: 100%;
+}
+
+section:hover {
+    background: rgba(41, 98, 255, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    box-shadow: 0 5px 20px rgba(41, 98, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Interactive Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+footer:hover::before {
+    left: 100%;
+}
+
+footer:hover {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+h1 {
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+}
+
+h2 {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 0.5rem;
+    margin-top: 3rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+h2:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.6);
+    transform: translateX(10px);
+}
+
+h3 {
+    color: var(--accent);
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+h3:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(41, 98, 255, 0.6);
+    transform: translateX(5px);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--light);
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.subtitle:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* Interactive About Items */
+.about-item {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.about-item:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateX(10px);
+    box-shadow: 0 3px 15px rgba(100, 255, 218, 0.2);
+}
+
+.about-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.about-item:hover .about-icon {
+    transform: scale(1.3) rotate(10deg);
+    filter: drop-shadow(0 0 5px var(--accent));
+}
+
+/* Interactive Experience Items */
+.experience-item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.experience-item:hover {
+    background: rgba(41, 98, 255, 0.1);
+    border-left-color: var(--accent);
+    transform: translateX(8px);
+    box-shadow: 0 5px 20px rgba(41, 98, 255, 0.2);
+}
+
+.resume-link {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.resume-link:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+.resume-link svg {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
     transition: transform 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.resume-link:hover svg {
+    transform: rotate(180deg);
+}
+
+.experience-company {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-company {
+    color: var(--accent);
+}
+
+.experience-date {
+    color: rgba(204, 214, 246, 0.7);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-date {
+    color: var(--light);
+}
+
+/* Interactive Domain Items */
+.domain-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.domain-item {
+    background: rgba(41, 98, 255, 0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    flex: 1 1 300px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.domain-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.domain-item:hover::before {
+    left: 100%;
+}
+
+.domain-item:hover {
+    background: rgba(100, 255, 218, 0.15);
+    border-left-color: var(--primary);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
+}
+
+/* Interactive Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: var(--table-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+table:hover {
+    box-shadow: 0 5px 20px rgba(41, 98, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+}
+
+th {
+    color: var(--accent);
+    font-weight: 600;
+    background: rgba(41, 98, 255, 0.1);
+}
+
+th:hover {
+    background: rgba(100, 255, 218, 0.2);
+    color: white;
+}
+
+tr {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: rgba(41, 98, 255, 0.2);
+    transform: scale(1.01);
+}
+
+tr:hover td {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.project-icon {
+    font-size: 1.3rem;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+tr:hover .project-icon {
+    transform: scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 0 5px var(--accent));
+}
+
+.tech {
+    display: inline-block;
     background: rgba(41, 98, 255, 0.2);
+    color: var(--accent);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin: 0.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech:hover {
+    background: rgba(100, 255, 218, 0.3);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(100, 255, 218, 0.4);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.about-column {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.about-column:hover {
+    background: rgba(41, 98, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 98, 255, 0.2);
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-link {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(41, 98, 255, 0.1);
+    color: var(--accent);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.profile-link:hover {
+    background: rgba(41, 98, 255, 0.2);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(41, 98, 255, 0.3);
+}
+
+.link-icon {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.profile-link:hover .link-icon {
+    transform: rotate(360deg);
 }
 
 .project-detail {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--dark);
+    max-width: 800px;
+    margin: 2rem auto;
     padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-    max-width: 600px;
-    width: 90%;
-    z-index: 100;
-    display: none;
+    background: rgba(10, 25, 47, 0.8);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: var(--accent);
-    font-size: 1.5rem;
-    text-decoration: none;
+.project-detail:hover {
+    box-shadow: 0 8px 25px rgba(41, 98, 255, 0.3);
+    transform: translateY(-3px);
 }
-.project-link {
+
+.project-content h2 {
+    color: var(--accent);
+    margin-top: 1.5rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.tech-stack {
+    margin: 1.5rem 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
     color: var(--accent);
     text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateX(-5px);
+    box-shadow: 0 3px 10px rgba(100, 255, 218, 0.3);
+}
+
+/* List Items Interactive */
+ul li {
+    transition: all 0.3s ease;
+    padding: 0.2rem 0;
+    cursor: pointer;
+}
+
+ul li:hover {
+    color: var(--accent);
+    transform: translateX(5px);
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
+}
+
+/* Paragraph Interactive */
+p {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+p:hover {
+    color: var(--accent);
+    text-shadow: 0 0 3px rgba(100, 255, 218, 0.2);
+}
+/*     new addition  */
+
+/* Add this to your existing styles.css */
+
+/* Experience Company Link Styles */
+.experience-company-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.experience-company-link:hover {
+    transform: translateX(5px);
+}
+
+.experience-company-link .experience-company {
+    transition: all 0.3s ease;
+}
+
+.experience-company-link:hover .experience-company {
+    color: var(--accent);
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.6);
+}
+
+/* Home Navigation Styles */
+
+.home-nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(41, 98, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid var(--accent);
+}
+
+.home-nav:hover {
+    background: rgba(100, 255, 218, 0.9);
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(100, 255, 218, 0.4);
+}
+
+.home-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 0.9rem;
 }
-.project-link:hover {
-    text-decoration: underline;
+
+.home-nav:hover a {
+    color: var(--dark);
 }
+
+.home-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.home-nav:hover .home-icon {
+    transform: rotate(15deg);
+}
+
+/* *******/
+
+/* Hoverable Info Styles */
+.hoverable-info {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+.hoverable-info:hover {
+    background: rgba(100, 255, 218, 0.2);
+    color: var(--accent);
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.4);
+    transform: scale(1.02);
+}
+
+/* Hover Dropdown List Styles */
+.hover-dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    padding: 15px 20px;
+    background: rgba(10, 25, 47, 0.95);
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 25px rgba(41, 98, 255, 0.4);
+    z-index: 1000;
+    min-width: 300px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.hoverable-info:hover .hover-dropdown-list {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-dropdown-list li {
+    margin: 8px 0;
+    color: var(--light);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 5px;
+    list-style: none;
+    border-left: 3px solid transparent;
+}
+
+.hover-dropdown-list li:hover {
+    background: rgba(100, 255, 218, 0.15);
+    color: var(--accent);
+    transform: translateX(8px);
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
+    border-left-color: var(--accent);
+}
+
+/* Enhanced animation for hover dropdown */
+@keyframes hoverSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hoverable-info:hover .hover-dropdown-list {
+    animation: hoverSlideIn 0.4s ease-out;
+}
+
+/* Add some glow effect on hover */
+.hoverable-info:hover .hover-dropdown-list::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent), var(--primary), var(--accent));
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(8px);
+}
+
+/* adding for projects ************/
+
+
+/* ending here  */
+
+
+
+@media (max-width: 600px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .strip {
+        width: 100%;
+        height: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    .domain-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Add some pulse animations for key elements */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(100, 255, 218, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+}
+
+.resume-link:hover,
+.profile-link:hover {
+    animation: pulse 2s infinite;
+}
+

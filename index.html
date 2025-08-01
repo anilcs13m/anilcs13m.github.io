@@ -4,606 +4,291 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anil Kumar - Machine Learning Engineer</title>
-
-    <style>
-    :root {
-        --primary: #2962ff;
-        --dark: #0a192f;
-        --light: #ccd6f6;
-        --accent: #64ffda;
-        --table-bg: rgba(10, 25, 47, 0.7);
-    }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--light);
-        background-color: var(--dark);
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 2rem;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    body::before,
-    body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 150px;
-        background: rgba(255, 235, 100, 0.15);
-        z-index: 1;
-    }
-
-    body::before {
-        left: 0;
-    }
-
-    body::after {
-        right: 0;
-    }
-
-    header {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding: 1rem;
-        transition: background 0.3s ease;
-        border-radius: 10px;
-        background: rgba(41, 98, 255, 0.05);
-    }
-
-    header:hover {
-        background: rgba(41, 98, 255, 0.1);
-        transform: scale(1.01);
-    }
-
-    h1 {
-        color: var(--accent);
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        transition: text-shadow 0.3s ease;
-    }
-
-    h1:hover {
-        text-shadow: 0 0 8px var(--accent);
-        cursor: default;
-    }
-
-    h2 {
-        color: var(--primary);
-        border-bottom: 1px solid var(--primary);
-        padding-bottom: 0.5rem;
-        margin-top: 3rem;
-    }
-
-    h3 {
-        color: var(--accent);
-        margin: 2rem 0 1rem;
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-        color: var(--light);
-        opacity: 0.9;
-        margin-bottom: 1rem;
-    }
-
-    .about-item {
-        margin-bottom: 0.8rem;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .about-icon {
-        margin-right: 10px;
-        font-size: 1.2rem;
-    }
-
-    .resume-link {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(100, 255, 218, 0.1);
-        color: var(--accent);
-        padding: 0.6rem 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        border: 1px solid var(--accent);
-        transition: all 0.3s ease;
-        margin-top: 0.5rem;
-    }
-
-    .resume-link:hover {
-        background: rgba(100, 255, 218, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .resume-link svg {
-        margin-right: 8px;
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-    }
-
-    .experience-company {
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-    }
-
-    .experience-date {
-        color: rgba(204, 214, 246, 0.7);
-        font-size: 0.9rem;
-    }
-
-    .domain-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin: 1.5rem 0;
-    }
-
-    .domain-item {
-        background: rgba(41, 98, 255, 0.1);
-        padding: 0.8rem 1.2rem;
-        border-radius: 5px;
-        border-left: 3px solid var(--accent);
-        flex: 1 1 300px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.5rem 0;
-        background-color: var(--table-bg);
-    }
-
-    th, td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-    }
-
-    th {
-        color: var(--accent);
-        font-weight: 600;
-    }
-
-    tr:hover {
-        background-color: rgba(41, 98, 255, 0.1);
-    }
-
-    .project-icon {
-        font-size: 1.3rem;
-        margin-right: 8px;
-    }
-
-    .tech {
-        display: inline-block;
-        background: rgba(41, 98, 255, 0.2);
-        color: var(--accent);
-        padding: 0.3rem 0.6rem;
-        border-radius: 4px;
-        font-size: 0.85rem;
-        margin: 0.2rem;
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-top: 1rem;
-    }
-
-    .about-column {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .link-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .profile-link {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(41, 98, 255, 0.1);
-        color: var(--accent);
-        padding: 0.6rem 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        border: 1px solid var(--primary);
-        transition: all 0.3s ease;
-        margin-top: 0.5rem;
-    }
-
-    .profile-link:hover {
-        background: rgba(41, 98, 255, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .link-icon {
-        margin-right: 8px;
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-    }
-
-    .project-detail {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 2rem;
-        background: rgba(10, 25, 47, 0.8);
-        border-radius: 10px;
-    }
-
-    .project-content h2 {
-        color: var(--accent);
-        margin-top: 1.5rem;
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .tech-stack {
-        margin: 1.5rem 0;
-    }
-
-    .back-link {
-        display: inline-block;
-        margin-top: 2rem;
-        color: var(--accent);
-        text-decoration: none;
-        border: 1px solid var(--accent);
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .back-link:hover {
-        background: rgba(100, 255, 218, 0.1);
-    }
-
-    .project-link:hover strong {
-        text-decoration: underline;
-        color: var(--primary);
-    }
-    .more-details-link {
-    	display: inline-block;
-    	margin-top: 0.5rem;
-    	font-size: 0.9rem;
-    	color: var(--primary);
-    	text-decoration: underline;
-    	transition: color 0.3s ease;
-    }
-
-    .more-details-link:hover {
-    	color: var(--accent);
-    	text-decoration: none;
-	}
-
-    footer {
-        text-align: center;
-        padding: 1rem;
-        margin-top: 3rem;
-        font-size: 0.9rem;
-        color: rgba(204, 214, 246, 0.6);
-        border-top: 1px solid rgba(204, 214, 246, 0.2);
-        background: rgba(41, 98, 255, 0.05);
-        border-radius: 10px;
-        transition: background 0.3s ease;
-    }
-
-    footer:hover {
-        background: rgba(41, 98, 255, 0.1);
-        color: var(--accent);
-    }
-
-    @media (max-width: 600px) {
-        .about-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 768px) {
-        body {
-            padding: 1rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        table {
-            display: block;
-            overflow-x: auto;
-        }
-    }
-</style>
-
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>👋 Hi there, I'm Anil Kumar</h1>
-        <p class="subtitle">Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</p>
-        <p>Building scalable ML systems that bridge <strong>computer vision and language understanding</strong> for e-commerce, retail, and content platforms.</p>
-    </header>
-    
-    <section>
-        <h2>🧠 About Me</h2>
-        
-        <div class="about-item">
-            <span class="about-icon">🎓</span>
-            <span><strong>B.Tech + M.Tech in Computer Science</strong></span>
-        </div>
-        
-        <div class="about-item">
-            <span class="about-icon">💼</span>
-            <span><strong>8+ years of experience</strong> in Machine Learning & Deep Learning</span>
-        </div>
-        
-        <div class="about-item">
-            <span class="about-icon">🏗️</span>
-            <span>Experienced in <strong>end-to-end ML project execution</strong>: from problem discovery, data curation, model development, to scalable deployment.</span>
-        </div>
-
-       <div class="about-grid">
-            <div class="about-column">
-                <span class="about-icon">📄</span>
-                <div class="link-container">
-                    <span>Download Resume:</span>
-                    <a href="Anil_Kumar.pdf" class="profile-link" download="Anil_Kumar.pdf">
-                        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                        </svg>
-                        Download Resume
-                    </a>
+    <div class="container">
+        <div class="strip"></div>
+        <div class="content">
+            <header>
+                <h1>👋 Hi there, I'm Anil Kumar</h1>
+                <p class="subtitle">Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</p>
+                <p>Building scalable ML systems that bridge <strong>computer vision and language understanding</strong> for e-commerce, surveillance and content platforms.</p>
+            </header>
+            
+            <section>
+                <h2>🧠 About Me</h2>
+                
+                <div class="about-item">
+                    <span class="about-icon">🎓</span>
+                    <span><strong>B.Tech + M.Tech in Computer Science</strong></span>
                 </div>
-            </div>
-	    <div class="about-column">
-                <span class="about-icon">🔗</span>
-                <div class="link-container">
-                    <span>Connect with me:</span>
-                    <a href="https://in.linkedin.com/in/anilcs13m" class="profile-link" target="_blank">
-                        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                        LinkedIn
-                    </a>
+                
+                <div class="about-item">
+                    <span class="about-icon">💼</span>
+                    <span><strong>8+ years of experience</strong> in Machine Learning & Deep Learning</span>
                 </div>
-            </div>
+                
+                <div class="about-item">
+                    <span class="about-icon">🏗️</span>
+                    <span>Experienced in <strong>end-to-end ML project execution</strong>: from problem discovery, data curation, model development, to scalable deployment.</span>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-column">
+                        <span class="about-icon">📄</span>
+                        <div class="link-container">
+                            <span>Download Resume:</span>
+                            <a href="Anil_Kumar.pdf" class="profile-link" download="Anil_Kumar.pdf">
+                                <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                </svg>
+                                Download Resume
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-column">
+                        <span class="about-icon">🔗</span>
+                        <div class="link-container">
+                            <span>Connect with me:</span>
+                            <a href="https://in.linkedin.com/in/anilcs13m" class="profile-link" target="_blank">
+                                <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>💼 Professional Experience</h2>
+
+                <div class="experience-item">
+                    <div>
+                        <a href="zee-entertainment.html" class="experience-company-link">
+                            <div class="experience-company">🏢  ZEE Entertainment Enterprises - Software Engineer &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;">Click more</span> </div>
+                        </a>
+                        <div class="experience-date">Jan 2020 - Present</div>
+                        <ul>
+                            <li>Video Moderation for short video platform</li>
+                            <li>Thumbnail Generator for short video platform</li> 
+                            <li>Implemented video engagement predict models for short videos</li>
+                            <li>Developed an “X-Ray” feature for OTT platforms providing real-time actor and cast identification during video playback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div>
+                        <a href="charmboard.html" class="experience-company-link">
+                            <div class="experience-company">🏢  Charmboard - Software Engineer &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;">Click more</span></div>
+                       </a>
+                        <div class="experience-date">Feb 2018 - Dec 2019 </div>
+                        <ul>
+                            <li>Developed machine learning models for e-commerce applications</li>
+                            <li>Built visual search and recommendation systems</li>
+                            <li>Implemented automated data processing pipelines for images/videos </li>
+                            <li>Developed video injection system to make videos shopable</li>
+                            <li>Object Detection for clothings</li>
+                       
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div>
+                        <a href="allgovision.html" class="experience-company-link">
+                            <div class="experience-company">🏢  AllGoVision - Software Engineer &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;">Click more</span> </div>
+                        </a>
+                        <div class="experience-date">Oct 2016 - Oct 2017</div>
+                        <ul>
+                            <li>Face Recognition and Detection</li>
+                            <li>Data Curation Pipeline for Face and ANPR</li>
+                            <li>OCR Character Classificcation for ANPR </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rest of the sections remain the same -->
+            <section>
+                <h2>🔥 Key Domains</h2>
+                
+                <div class="domain-list">
+                    <div class="domain-item">🧠 Classification, Detection, Recognition</div>
+                    <div class="domain-item">🧠 Visual Similarity Search</div>
+                    <div class="domain-item">🖼️ Vision-Language Multimodal Models.</div>
+                    <div class="domain-item">🎥 Video Classification</div>
+                    <div class="domain-item">🧑‍🤝‍🧑 Face Recognition & Clustering</div>
+                    <div class="domain-item">🧵 Self-Supervised Learning & Transformers</div>
+                    <div class="domain-item">🧠 Object Detection and Tracking</div>
+                    <div class="domain-item">🧠 Video Injection System</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>🚀 Projects & Solutions</h2>
+                
+                <h3>🛍️ E-Commerce & Fashion AI</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'">
+                            <td><span class="project-icon">🎬</span> <strong>Shoppable Video Injection</strong></td>
+                            <td>Detects fashion items in videos and links them to e-commerce catalogs.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        </tr>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'">
+                            <td><span class="project-icon">👗</span> <strong>Visual Similarity Search</strong></td>
+                            <td>Uses CLIP-based embeddings to find visually similar items.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'" >
+                            <td><span class="project-icon">🧥</span> <strong>Clothing Part Detection</strong></td>
+                            <td>Detects clothing parts like sleeves, collars, and hems using object detection.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        </tr>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'">
+                            <td><span class="project-icon">🧠</span> <strong>Fashion Recommender</strong></td>
+                            <td>Recommends complementary clothing items using co-occurrence and visual signals. &nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        </tr>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'">
+                            <td><span class="project-icon">🔎</span> <strong>Image Captioning for Fashion</strong></td>
+                            <td>Generates detailed product captions using image-text pairs.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        </tr>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'">
+                            <td><span class="project-icon">👗</span> <strong>AI Stylist (LLaMA Fine-Tuning)</strong></td>
+                            <td>Outfit generation and completion using fine-tuned LLaMA on fashion datasets.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        </tr>
+                        <tr class="clickable-project" onclick="window.location.href='shoppable-video-injection.html'">
+                            <td><span class="project-icon">🛍️</span> <strong>Fashion Image Classification</strong></td>
+                            <td>Categorizes fashion products into types, styles, and materials.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>🎥 Video Intelligence & Content Understanding</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickable-project" onclick="window.location.href= 'video_moderation_service.html'">  
+                            <td><span class="project-icon">🛡️</span> <strong>Video Moderation Service</strong></td>
+                            <td>The system performs multi-stage parallel processing to analyze video content across multiple dimensions including safety, legal compliance, quality, and content similarity.&nbsp;|&nbsp;&nbsp; <span style="color: red;">Click more</span>  </td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🖼️</span> <strong>AI Thumbnail Generator</strong></td>
+                            <td>Generates high-engagement thumbnails from video frames using face, emotions, and nima score</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🎥</span> <strong>Video Classification</strong></td>
+                            <td>Classifies videos based on topic, activity, or content type using I3D & Transformers.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🧑‍🦰</span> <strong>Face Recognition System</strong></td>
+                            <td>Identifies and clusters faces across frames and videos with tracking and ArcFace embeddings.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🧠</span> <strong>Video Retrieval & Similarity Search</strong></td>
+                            <td>Retrieves similar videos using multimodal embeddings (visual + audio).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🎥</span> <strong>Video Engagement prediction</strong></td>
+                            <td>Score the based on the visual features, for different duration use different scoring.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🎞️</span> <strong>Scene & Logo Detection</strong></td>
+                            <td>Detects brand logos and segments scenes for campaign analysis.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🔍</span> <strong>Video Feature Extraction System</strong></td>
+                            <td>Extracts temporal visual features using I3D, audio features via Restnet50, VGGish.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🛑</span> <strong>Content Moderation Pipeline</strong></td>
+                            <td>Full-stack system for video flagging using detection, classification, OCR, audio, and vision.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">👥</span> <strong>Self-Supervised Face Clustering</strong></td>
+                            <td>Clusters faces in video using contrastive learning + clustering with FAISS + DeepFace.</td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+                <h3>🔊 Audio & Text Understanding</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="project-icon">🗣️</span> <strong>Audio Classification</strong></td>
+                            <td>Classifies audio from short videos using VGGish and transformers modeling.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🧏</span> <strong>Text Feature Extraction</strong></td>
+                            <td>Extracts rich contextual embeddings using BERT-model.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">😊</span> <strong>Sentiment Analysis</strong></td>
+                            <td>Detects user sentiment from users comments</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>⚙️ Core ML & R&D Work</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="project-icon">🔢</span> <strong>Digit Classification</strong></td>
+                            <td>Classic CNN pipeline for MNIST-style digits and characters recognition.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🧪</span> <strong>Model Comparison & Metrics</strong></td>
+                            <td>Benchmarked models using F1, ROC-AUC, precision/recall across tasks.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🧼</span> <strong>Data Cleaning & Curation Tools</strong></td>
+                            <td>Built semi-automated data annotation and deduplication pipelines.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🧵</span> <strong>Vision Transformer with MAE</strong></td>
+                            <td>Used masked autoencoders for unsupervised pretraining on large vision datasets.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🤖</span> <strong>Object Detection & Classification</strong></td>
+                            <td>Trained YOLO and Faster-RCNN models for retail and surveillance.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="project-icon">🖼️</span> <strong>CLIP-based Feature Embeddings</strong></td>
+                            <td>Used CLIP to unify vision and text space for similarity and search.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <footer>
+                <p>© Anil Kumar | 2025</p>
+            </footer>
         </div>
-
-    </section>
-
-    <section>
-        <h2>💼 Professional Experience</h2>
-
-        <div class="experience-item">
-            <div>
-                <div class="experience-company">🏢  ZEE Entertainment Enterprises - Software Engineer <a href="zee_experience.html" target="_blank" class="more-details-link">More details</a> </div>
-                <div class="experience-date">Jan 2020 - Present</div>
-                <ul>
-                    <li>Video Moderation </li>
-                    <li>Implemented transformer-based video understanding pipelines</li>
-                    <li>Face Detection</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div>
-            <div class="experience-company">🏢  Charmbaord - Software Engineer <a href="charmboard.html" target="_blank" class="more-details-link">More details</a> </div>
-                <div class="experience-date">Feb 2018 - Dec 2019</div>
-                <ul>
-                    <li>Developed machine learning models for e-commerce applications</li>
-                    <li>Built visual search and recommendation systems</li>
-                    <li>Implemented automated data processing pipelines</li>
-		    <li>Object Detection for clothings</li>
-                </ul>
-            </div>
-        </div>
-	<div class="experience-item">
-         <div>
-           <div class="experience-company">🏢  AllGoVision - Software Engineer <a href="allgovision.html" target="_blank" class="more-details-link">More details</a>
- </div>
-           <div class="experience-date">Oct 2016 - Oct 2017</div>
-           <ul>
-              <li>Face model</li>
-             <li>OCR</li>
-          </ul>
-       </div>
-     </div>
-    </section>
-
-    <section>
-        <h2>🔥 Key Domains</h2>
-        
-        <div class="domain-list">
-            <div class="domain-item">🧠 Classification, Detection, Recognition</div>
-            <div class="domain-item">🖼️ Vision-Language Multimodal Models (e.g., CLIP, LLaMA)</div>
-            <div class="domain-item">🎥 Video AI and Audio-Visual Understanding</div>
-            <div class="domain-item">🧑‍🤝‍🧑 Face Recognition & Clustering</div>
-            <div class="domain-item">🧵 Self-Supervised Learning & Transformers (MAE, ViT)</div>
-	    <div class="domain-item">👗 Visual Similarity (Contrastive Learning)</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>🚀 Projects & Solutions</h2>
-        
-        <h3>🛍️ E-Commerce & Fashion AI</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="project-icon">👗</span> <strong>AI Stylist (LLaMA Fine-Tuning)</strong></td>
-                    <td>Outfit generation and completion using fine-tuned LLaMA on fashion datasets.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧥</span> <strong>Clothing Part Detection</strong></td>
-                    <td>Detects clothing parts like sleeves, collars, and hems using object detection.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🎬</span> <strong>Shoppable Video Injection</strong></td>
-                    <td>Detects fashion items in videos and links them to e-commerce catalogs.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">👗</span> <strong>Visual Similarity Search</strong></td>
-                    <td>Uses CLIP-based embeddings to find visually similar items.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧠</span> <strong>Fashion Recommender</strong></td>
-                    <td>Recommends complementary clothing items using co-occurrence and visual signals.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🔎</span> <strong>Image Captioning for Fashion</strong></td>
-                    <td>Generates detailed product captions using image-text pairs.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🛍️</span> <strong>Fashion Image Classification</strong></td>
-                    <td>Categorizes fashion products into types, styles, and materials.</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h3>🎥 Video Intelligence & Content Understanding</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="project-icon">🛡️</span> <strong>Content Moderation</strong></td>
-                    <td>Detects unsafe visual/audio content in real-time videos.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🖼️</span> <strong>AI Thumbnail Generator</strong></td>
-                    <td>Generates high-engagement thumbnails from video frames using saliency + aesthetics.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🎥</span> <strong>Video Classification</strong></td>
-                    <td>Classifies videos based on topic, activity, or content type using I3D & Transformers.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧑‍🦰</span> <strong>Face Recognition System</strong></td>
-                    <td>Identifies and clusters faces across frames and videos with tracking and ArcFace embeddings.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧠</span> <strong>Video Retrieval & Similarity Search</strong></td>
-                    <td>Retrieves similar videos using multimodal embeddings (visual + audio + text).</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🎞️</span> <strong>Scene & Logo Detection</strong></td>
-                    <td>Detects brand logos and segments scenes for campaign analysis.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🔍</span> <strong>Video Feature Extraction System</strong></td>
-                    <td>Extracts temporal visual features using I3D, audio features via VGGish, and fuses them.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🛑</span> <strong>Content Moderation Pipeline</strong></td>
-                    <td>Full-stack system for video flagging using detection, OCR, audio, and vision.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">👥</span> <strong>Self-Supervised Face Clustering</strong></td>
-                    <td>Clusters faces in video using contrastive learning + clustering with FAISS + DeepFace.</td>
-                </tr>
-            </tbody>
-        </table>
-       
-        <h3>🔊 Audio & Text Understanding</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Project</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <a href="audio-classification.html" class="project-link">
-                    <span class="project-icon">🗣️</span> 
-                    <strong>Audio Classification &nbsp;&nbsp;|&nbsp;&nbsp; 
-  <span class="click-more">Click more</span> </strong>
-                </a>
-            </td>
-            <td>Classifies audio streams using VGGish and temporal modeling.</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="text-feature-extraction.html" class="project-link">
-                    <span class="project-icon">🧏</span> 
-                    <strong>Text Feature Extraction &nbsp;&nbsp;|&nbsp;&nbsp; 
-  <span class="click-more">Click more</span></strong>
-                </a>
-            </td>
-            <td>Extracts rich contextual embeddings using transformers (BERT/GPT).</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="sentiment-analysis.html" class="project-link">
-                    <span class="project-icon">😊</span> 
-                    <strong>Sentiment Analysis &nbsp;&nbsp;|&nbsp;&nbsp; 
-  <span class="click-more">Click more</span></strong>
-                </a>
-            </td>
-            <td>Detects user sentiment from product reviews and voice interactions.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3>⚙️ Core ML & R&D Work</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="project-icon">🔢</span> <strong>Digit Classification</strong></td>
-                    <td>Classic CNN pipeline for MNIST-style digit recognition.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧪</span> <strong>Model Comparison & Metrics</strong></td>
-                    <td>Benchmarked models using F1, ROC-AUC, precision/recall across tasks.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧼</span> <strong>Data Cleaning & Curation Tools</strong></td>
-                    <td>Built semi-automated data annotation and deduplication pipelines.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🧵</span> <strong>Vision Transformer with MAE</strong></td>
-                    <td>Used masked autoencoders for unsupervised pretraining on large vision datasets.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🤖</span> <strong>Object Detection & Classification</strong></td>
-                    <td>Trained YOLO and Faster-RCNN models for retail and surveillance.</td>
-                </tr>
-                <tr>
-                    <td><span class="project-icon">🖼️</span> <strong>CLIP-based Feature Embeddings</strong></td>
-                    <td>Used CLIP to unify vision and text space for similarity and search.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-  <footer>
-    <p> Anil Kumar | © 2025</p>
-  </footer>
-
+        <div class="strip"></div>
+    </div>
 </body>
 </html>
+

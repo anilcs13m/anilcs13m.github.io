@@ -3,332 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anil Kumar - Machine Learning Engineer</title>
-
-    <style>
-    :root {
-        --primary: #2962ff;
-        --dark: #0a192f;
-        --light: #ccd6f6;
-        --accent: #64ffda;
-        --table-bg: rgba(10, 25, 47, 0.7);
-    }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--light);
-        background-color: var(--dark);
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 2rem;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    body::before,
-    body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 150px;
-        background: rgba(255, 235, 100, 0.15);
-        z-index: 1;
-    }
-
-    body::before {
-        left: 0;
-    }
-
-    body::after {
-        right: 0;
-    }
-
-    header {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding: 1rem;
-        transition: background 0.3s ease;
-        border-radius: 10px;
-        background: rgba(41, 98, 255, 0.05);
-    }
-
-    header:hover {
-        background: rgba(41, 98, 255, 0.1);
-        transform: scale(1.01);
-    }
-
-    h1 {
-        color: var(--accent);
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        transition: text-shadow 0.3s ease;
-    }
-
-    h1:hover {
-        text-shadow: 0 0 8px var(--accent);
-        cursor: default;
-    }
-
-    h2 {
-        color: var(--primary);
-        border-bottom: 1px solid var(--primary);
-        padding-bottom: 0.5rem;
-        margin-top: 3rem;
-    }
-
-    h3 {
-        color: var(--accent);
-        margin: 2rem 0 1rem;
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-        color: var(--light);
-        opacity: 0.9;
-        margin-bottom: 1rem;
-    }
-
-    .about-item {
-        margin-bottom: 0.8rem;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .about-icon {
-        margin-right: 10px;
-        font-size: 1.2rem;
-    }
-
-    .resume-link {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(100, 255, 218, 0.1);
-        color: var(--accent);
-        padding: 0.6rem 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        border: 1px solid var(--accent);
-        transition: all 0.3s ease;
-        margin-top: 0.5rem;
-    }
-
-    .resume-link:hover {
-        background: rgba(100, 255, 218, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .resume-link svg {
-        margin-right: 8px;
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-    }
-
-    .experience-company {
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-    }
-
-    .experience-date {
-        color: rgba(204, 214, 246, 0.7);
-        font-size: 0.9rem;
-    }
-
-    .domain-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin: 1.5rem 0;
-    }
-
-    .domain-item {
-        background: rgba(41, 98, 255, 0.1);
-        padding: 0.8rem 1.2rem;
-        border-radius: 5px;
-        border-left: 3px solid var(--accent);
-        flex: 1 1 300px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.5rem 0;
-        background-color: var(--table-bg);
-    }
-
-    th, td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-    }
-
-    th {
-        color: var(--accent);
-        font-weight: 600;
-    }
-
-    tr:hover {
-        background-color: rgba(41, 98, 255, 0.1);
-    }
-
-    .project-icon {
-        font-size: 1.3rem;
-        margin-right: 8px;
-    }
-
-    .tech {
-        display: inline-block;
-        background: rgba(41, 98, 255, 0.2);
-        color: var(--accent);
-        padding: 0.3rem 0.6rem;
-        border-radius: 4px;
-        font-size: 0.85rem;
-        margin: 0.2rem;
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-top: 1rem;
-    }
-
-    .about-column {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .link-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .profile-link {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(41, 98, 255, 0.1);
-        color: var(--accent);
-        padding: 0.6rem 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        border: 1px solid var(--primary);
-        transition: all 0.3s ease;
-        margin-top: 0.5rem;
-    }
-
-    .profile-link:hover {
-        background: rgba(41, 98, 255, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .link-icon {
-        margin-right: 8px;
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-    }
-
-    .project-detail {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 2rem;
-        background: rgba(10, 25, 47, 0.8);
-        border-radius: 10px;
-    }
-
-    .project-content h2 {
-        color: var(--accent);
-        margin-top: 1.5rem;
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .tech-stack {
-        margin: 1.5rem 0;
-    }
-
-    .back-link {
-        display: inline-block;
-        margin-top: 2rem;
-        color: var(--accent);
-        text-decoration: none;
-        border: 1px solid var(--accent);
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .back-link:hover {
-        background: rgba(100, 255, 218, 0.1);
-    }
-
-    .project-link:hover strong {
-        text-decoration: underline;
-        color: var(--primary);
-    }
-    .more-details-link {
-    	display: inline-block;
-    	margin-top: 0.5rem;
-    	font-size: 0.9rem;
-    	color: var(--primary);
-    	text-decoration: underline;
-    	transition: color 0.3s ease;
-    }
-
-    .more-details-link:hover {
-    	color: var(--accent);
-    	text-decoration: none;
-	}
-
-    footer {
-        text-align: center;
-        padding: 1rem;
-        margin-top: 3rem;
-        font-size: 0.9rem;
-        color: rgba(204, 214, 246, 0.6);
-        border-top: 1px solid rgba(204, 214, 246, 0.2);
-        background: rgba(41, 98, 255, 0.05);
-        border-radius: 10px;
-        transition: background 0.3s ease;
-    }
-
-    footer:hover {
-        background: rgba(41, 98, 255, 0.1);
-        color: var(--accent);
-    }
-
-    @media (max-width: 600px) {
-        .about-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 768px) {
-        body {
-            padding: 1rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        table {
-            display: block;
-            overflow-x: auto;
-        }
-    }
-</style>
-
-
+    <title>AllGoVision - Anil Kumar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>👋 Hi there, I'm Anil Kumar</h1>
-        <p class="subtitle">Machine Learning Engineer | Computer Vision & Multimodal AI Specialist</p>
-        <p>Building scalable ML systems that bridge <strong>computer vision and language understanding</strong> for e-commerce, retail, and content platforms.</p>
-    </header>
+    <div class="home-nav">
+        <a href="index.html">
+            <span class="home-icon">🏠</span>
+            <span>Home</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="strip"></div>
+        <div class="content">
+            <header>
+                <h1>👁️ AllGoVision</h1>
+                <p class="subtitle">Software Engineer | Computer Vision & OCR Specialist</p>
+                <p>Developing <strong>video surveillance system</strong> and image processing solutions using advanced computer vision techniques.</p>
+            </header>
+            
+            <section>
+                <h2>🎯 Role Overview</h2>
+                
+                <div class="about-item">
+                    <span class="about-icon">📅</span>
+                    <span><strong>Duration:</strong> Oct 2016 - Oct 2017 (1 year)</span>
+                </div>
+                
+                <div class="about-item">
+                    <span class="about-icon">💼</span>
+                    <span><strong>Position:</strong> Software Engineer - Computer Vision Team</span>
+                </div>
+                
+                <div class="about-item">
+                    <span class="about-icon">🎥</span>
+                    <span><strong>Focus:</strong> Face Recognition, Video Analytics, Image processing</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>🚀 Key Projects & Achievements</h2>
+                
+                <div class="domain-list">
+                    <div class="domain-item">
+                        <h3>🧑‍🦱 Face Recognition Training System</h3>
+                        <p>Developed robust face recognition training pipeline, achieving highest accuracy.</p>
+                    </div>
+                    
+                    <div class="domain-item">
+                        <h3>📄 Character and Digit Classification</h3>
+                        <p>Built comprehensive OCR system for classification for ANPR.</p>
+                    </div>
+
+                    <div class="domain-item">
+                        <h3>📹 Face Identificaiton and Verification </h3>
+                        <p>Image classificaiton pipeline.</p>
+                    </div>
+
+                    <div class="domain-item">
+                        <h3>📹 Video Analytics Pipeline</h3>
+                        <p>Implemented real-time video processing system for face detection and recognization in surveillance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>🔬 Detailed Technical Work & Implementation</h2>
+                
+                <h3>🧠 Machine Learning & Clustering</h3>
+                <ul>
+                    <li>Implemented and optimized clustering algorithms including <strong>DBSCAN, K-Means, PCA, and hierarchical clustering</strong> for face and image data analysis</li>
+                    <li>Designed robust preprocessing pipelines involving <strong>data augmentation, outlier removal, class merging, similarity filtering,</strong> and label cleanup</li>
+                </ul>
+
+                <h3>🧑‍🦱 Face Detection & Recognition</h3>
+                <ul>
+                    <li>Developed and compared <strong>face detection and cropping pipelines</strong> using dlib, OpenCV, and deep learning-based methods</li>
+                    <li>Built and deployed <strong>age and gender detection models</strong> using classical and deep learning techniques</li>
+                    <li>Fine-tuned <strong>VGG for face recognition on a dataset of 3.4k identities</strong>, each with ~1k images, achieving high accuracy</li>
+                    <li>Constructed a <strong>large-scale face dataset with 10k classes</strong> and trained a triplet-loss-based feature embedding model</li>
+                    <li>Achieved <strong>~98.4% face verification accuracy on the LFW dataset</strong> using learned feature embeddings</li>
+                    <li>Fine-tuned <strong>AlexNet on face vs non-face datasets</strong> for improved face detection and validation</li>
+                    <li>Created a <strong>diverse Indian face dataset with over 2k identities</strong> and trained a triplet-loss embedding model for recognition</li>
+                </ul>
+
+                <h3>📄 OCR & Character Recognition</h3>
+                <ul>
+                    <li>Cleaned and prepared <strong>OCR datasets for Automatic Number Plate Recognition (ANPR)</strong> system training</li>
+                    <li>Trained <strong>LeNet using dlib and Caffe</strong> for robust digit and character recognition tasks</li>
+                    <li>Created a <strong>video frame-level annotated dataset with bounding boxes</strong> and number plate coordinates for ANPR model evaluation</li>
+                </ul>
+
+                <h3>🗃️ Dataset Creation & Management</h3>
+                <ul>
+                    <li>Developed <strong>automation scripts to download ~1k celebrity images</strong> via Google and Bing for face recognition training</li>
+                    <li>Wrote a <strong>downloader script for the VGG Face dataset</strong> using URLs from Oxford's VGG team</li>
+                    <li>Automated <strong>face extraction and cropping from full-body images</strong> using Haar Cascades and VGG face coordinates</li>
+                    <li>Curated a <strong>balanced dataset of face and non-face images</strong> for training and evaluating face detection models</li>
+                    <li>Handled <strong>large-scale preprocessing and formatting of datasets</strong> for CNN-based face recognition pipelines</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>💻 Technical Stack & Tools</h2>
+                
+                <div class="tech-stack">
+                    <span class="tech">Python</span>
+                    <span class="tech">OpenCV</span>
+                    <span class="tech">dlib</span>
+                    <span class="tech">scikit-image</span>
+                    <span class="tech">scikit-learn</span>
+                    <span class="tech">Caffe</span>
+                    <span class="tech">VGG</span>
+                    <span class="tech">LeNet</span>
+                    <span class="tech">CUDA</span>
+                    <span class="tech">Linux</span>
+                    <span class="tech">Git</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>📊 Impact & Results</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>System/Model</th>
+                            <th>Performance</th>
+                            <th>Dataset Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Face Recognition</strong></td>
+                            <td>more than 97% accuracy</td>
+                            <td>10k+ face database</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LFW Verification</strong></td>
+                            <td>98.4% accuracy</td>
+                            <td>Standard LFW dataset</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Large-scale Dataset</strong></td>
+                            <td>Triplet-loss model</td>
+                            <td>10k classes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indian Face Dataset</strong></td>
+                            <td>Embedding model</td>
+                            <td>2k+ identities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VGG Fine-tuning</strong></td>
+                            <td>Optimized recognition</td>
+                            <td>3.4k classes, ~1k images each</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OCR System</strong></td>
+                            <td>98% character accuracy</td>
+                            <td>ANPR datasets</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Video Processing</strong></td>
+                            <td>Real-time processing</td>
+                            <td>video surveillance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>🏆 Key Learnings & Growth</h2>
+                
+                <ul>
+                    <li>Built foundational expertise in computer vision and image processing</li>
+                    <li>Developed real-time video processing and analysis systems</li>
+                    <li>Implemented face recognition algorithms from scratch using multiple approaches</li>
+                    <li>Gained extensive experience in dataset creation, curation, and preprocessing</li>
+                    <li>Optimized OpenCV operations for performance-critical applications</li>
+                    <li>Mastered deep learning frameworks including Caffe for CNN training</li>
+                    <li>Developed expertise in clustering algorithms and unsupervised learning</li>
+                    <li>Built robust data pipelines for large-scale machine learning projects</li>
+                    <li>Worked on edge deployment and hardware optimization</li>
+                    <li>Gained experience in surveillance and security domain applications</li>
+                </ul>
+            </section>
+            
+            <footer>
+                <p>© Anil Kumar | Experience | 2025</p>
+            </footer>
+        </div>
+        <div class="strip"></div>
+    </div>
+</body>
+</html>
 
