@@ -792,24 +792,69 @@ p:hover {
     filter: blur(8px);
 }
 
+header h1 {
+    font-size: 2.5rem;  /* Larger size */
+    font-weight: 700;  /* Bold weight */
+    margin-bottom: 0.75rem;
+    color: var(--light);  /* Using your light color variable */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);  /* Subtle depth */
+    letter-spacing: 0.5px;  /* Slightly more spaced */
+}
+
+header .subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;  /* Semi-bold */
+    color: var(--accent);  /* Using your accent color */
+    margin-bottom: 1.25rem;
+    border-left: 3px solid var(--accent);  /* Accent bar */
+    padding-left: 12px;
+}
+
+header p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+header strong {
+    color: var(--accent);  /* Highlight with accent color */
+    font-weight: 600;
+    background: rgba(125, 217, 177, 0.15);  /* Subtle background */
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+
+
 /* adding for projects ************/
 header:hover {
-    background: linear-gradient(135deg, #4a6fcc, #5fbda0); /* Softer gradient */
-    color: #e0f2f1; /* Softer text color */
+    background: linear-gradient(135deg,
+        rgba(74, 111, 204, 0.7),  /* 70% opacity blue */
+        rgba(95, 189, 160, 0.7)   /* 70% opacity teal */
+    );
+    color: #e0f2f1;
     cursor: pointer;
-    box-shadow: 0 3px 10px rgba(75, 134, 204, 0.3); /* Reduced shadow intensity */
-    border-radius: 8px;
-    padding: 1.5rem 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(75, 134, 204, 0.2);  /* Lighter, smaller shadow */
+    border-radius: 6px;  /* Slightly less rounded */
+    padding: 1.2rem 1rem;  /* Less padding expansion */
+    transition: all 0.25s ease;  /* Slightly faster transition */
+    transform: translateY(-0.5px);  /* More subtle lift */
+    backdrop-filter: blur(2px);  /* Soft blur effect */
 }
 
 footer:hover {
-    background: linear-gradient(135deg, #5fbda0, #4a6fcc); /* Softer gradient */
-    box-shadow: 0 -3px 10px rgba(95, 189, 160, 0.3); /* Reduced shadow intensity */
-    color: #d0ebe8; /* Softer text color */
-    transform: translateY(-1px);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(135deg,
+        rgba(74, 111, 204, 0.7),  /* 70% opacity blue */
+        rgba(95, 189, 160, 0.7)   /* 70% opacity teal */
+    );
+    color: #e0f2f1;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(75, 134, 204, 0.2);  /* Lighter, smaller shadow */
+    border-radius: 6px;  /* Slightly less rounded */
+    padding: 1.2rem 1rem;  /* Less padding expansion */
+    transition: all 0.25s ease;  /* Slightly faster transition */
+    transform: translateY(-0.5px);  /* More subtle lift */
+    backdrop-filter: blur(2px);  /* Soft blur effect */
 }
 
 /* ending here  */
