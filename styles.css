@@ -6,6 +6,8 @@
     --table-bg: rgba(10, 25, 47, 0.7);
 }
 
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -14,6 +16,83 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Softer Dark Mode - Easier on the Eyes */
+:root {
+    --primary: #5a86ff;            /* Softer primary blue */
+    --dark: #1e293b;               /* Warmer slate dark background */
+    --light: #d1d9e6;              /* Soft off-white text for better readability */
+    --accent: #7dd9b1;             /* Pastel teal accent - less intense */
+    --table-bg: rgba(30, 41, 59, 0.85); /* Softer table background */
+}
+
+/* Apply softer background and text */
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7; /* Slightly increased for better readability */
+}
+
+/* Soften headers and footers */
+header, footer {
+    background-color: rgba(40, 55, 80, 0.85); /* Semi-transparent for depth without harshness */
+    color: var(--light);
+}
+
+/* Soften project icons, domain items, and tech tags */
+.project-icon, .domain-item, .tech {
+    background-color: rgba(125, 217, 177, 0.15); /* Lighter background */
+    color: var(--accent);
+}
+
+.project-icon:hover, .domain-item:hover, .tech:hover, .experience-item:hover {
+    background-color: rgba(125, 217, 177, 0.3); /* Softer hover background */
+    box-shadow: 0 6px 20px rgba(125, 217, 177, 0.35); /* Reduced shadow intensity */
+}
+
+/* Soften links and buttons */
+.resume-link, .profile-link {
+    background: rgba(125, 217, 177, 0.12); /* Lighter background */
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.resume-link:hover, .profile-link:hover {
+    background: rgba(125, 217, 177, 0.22); /* Softer hover */
+    box-shadow: 0 8px 25px rgba(125, 217, 177, 0.33); /* Gentler shadow */
+}
+
+/* Soften tables */
+.table, table {
+    background-color: var(--table-bg);
+    color: var(--light);
+}
+
+tr:hover {
+    background-color: rgba(125, 217, 177, 0.12) !important; /* Lighter hover */
+}
+
+/* Soften icons */
+.link-icon, .resume-link svg, .profile-link svg {
+    fill: var(--accent);
+}
+
+/* Custom scrollbar for better UX (soft teal to match theme) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(125, 217, 177, 0.5); /* Soft accent color */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+
 
 /* Container with side strips */
 .container {
@@ -714,7 +793,24 @@ p:hover {
 }
 
 /* adding for projects ************/
+header:hover {
+    background: linear-gradient(135deg, #4a6fcc, #5fbda0); /* Softer gradient */
+    color: #e0f2f1; /* Softer text color */
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(75, 134, 204, 0.3); /* Reduced shadow intensity */
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transform: translateY(-1px);
+}
 
+footer:hover {
+    background: linear-gradient(135deg, #5fbda0, #4a6fcc); /* Softer gradient */
+    box-shadow: 0 -3px 10px rgba(95, 189, 160, 0.3); /* Reduced shadow intensity */
+    color: #d0ebe8; /* Softer text color */
+    transform: translateY(-1px);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 /* ending here  */
 
