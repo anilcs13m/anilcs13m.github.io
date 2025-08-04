@@ -792,40 +792,6 @@ p:hover {
     filter: blur(8px);
 }
 
-header h1 {
-    font-size: 2.5rem;  /* Larger size */
-    font-weight: 700;  /* Bold weight */
-    margin-bottom: 0.75rem;
-    color: var(--light);  /* Using your light color variable */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);  /* Subtle depth */
-    letter-spacing: 0.5px;  /* Slightly more spaced */
-}
-
-header .subtitle {
-    font-size: 1.4rem;
-    font-weight: 600;  /* Semi-bold */
-    color: var(--accent);  /* Using your accent color */
-    margin-bottom: 1.25rem;
-    border-left: 3px solid var(--accent);  /* Accent bar */
-    padding-left: 12px;
-}
-
-header p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 800px;
-}
-
-header strong {
-    color: var(--accent);  /* Highlight with accent color */
-    font-weight: 600;
-    background: rgba(125, 217, 177, 0.15);  /* Subtle background */
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
-}
-
-
-
 /* adding for projects ************/
 header:hover {
     background: linear-gradient(135deg,
